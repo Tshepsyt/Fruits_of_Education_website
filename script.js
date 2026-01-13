@@ -1,15 +1,4 @@
-//window.addEventListener("load", function () {
-    // --- 1. LOADER LOGIC ---
-//    const loader = document.getElementById("loader-wrapper");
-//    if(loader) {
-//        loader.classList.add("loader-hidden");
-        // Remove from DOM to stop it blocking clicks
-//        loader.addEventListener("transitionend", () => {
-//            if (loader.parentNode) loader.parentNode.removeChild(loader);
-//        });
-//    }
-
-// Define the removal logic separately so we can call it from multiple places
+// Define the removal logic separately so it can be called from multiple places
 function removeLoader() {
     const loader = document.getElementById("loader-wrapper");
     
@@ -25,7 +14,7 @@ function removeLoader() {
 }
 
 window.addEventListener("DOMContentLoaded", () => {
-    setTimeout(removeLoader, 300);
+    setTimeout(removeLoader, 500);
 });
 
 // --- THEME LOGIC ---
