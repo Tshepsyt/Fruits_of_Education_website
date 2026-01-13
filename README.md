@@ -3,7 +3,7 @@
 > A high-performance, static responsive website designed for Fruits of Education,
  a non-profit focused on supporting learners' academic and career journey.
 
-**Live Demo:** [Link to your Netlify site]
+**Live Demo:** [Link to Netlify site]
 
 ## 📖 Project Overview
 This project serves as the primary digital presence for Fruits of Education.
@@ -37,12 +37,6 @@ between Desktop and Mobile views.
 
 ## 💻 Local Setup
 Since this project uses vanilla technologies, no build step is required.
-
-1.  Clone the repo:
-    ```bash
-    git clone [https://github.com/yourusername/npo-site.git](https://github.com/yourusername/npo-site.git)
-    ```
-2.  Open `index.html` in any modern browser.
 
 ## 📄 License
 Distributed under the MIT License. See `LICENSE` for more information.
