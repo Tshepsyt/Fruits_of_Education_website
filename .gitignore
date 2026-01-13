@@ -16,3 +16,4 @@ npm-debug.log*
 # Sensitive data
 .env
 secret.txt
+others/
