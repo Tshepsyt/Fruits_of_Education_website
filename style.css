@@ -1,12 +1,38 @@
 /* --- 1. VARIABLES (The Theme) --- */
+/*:root {*/
+/*    --primary-color: #093C71;    /* Blue*/
+/*    --accent-color: #FF9A16;     /* Orange (Good for buttons) */
+/*    /*--bg-light: #f4f6f7;*/         /* Light Grey background */
+/*    --text-color: #333333;*/
+/*    --white: #ffffff;*/
+/*    --radius: 8px;               /* Rounded corners */
+/*    --shadow: 0 4px 6px rgba(0,0,0,0.1); /* Subtle 3D effect */
+/*}*/
+
+/* --- 1. VARIABLES (Dark Mode Default) --- */
 :root {
-    --primary-color: #093C71;    /* Blue*/
-    --accent-color: #FF9A16;     /* Orange (Good for buttons) */
-    --bg-light: #f4f6f7;         /* Light Grey background */
-    --text-color: #333333;
-    --white: #ffffff;
+    --bg-light: #28292d;          /* Default Dark Background */
+    --primary-color: #185da6cf;
+    --accent-color: #FF9A16;
+    --text-color: #e0e0e0;        /* Default Light Text */
+    --bg-card: #1E1E1E;          /* Dark Grey Cards */
     --radius: 8px;               /* Rounded corners */
     --shadow: 0 4px 6px rgba(0,0,0,0.1); /* Subtle 3D effect */
+    --bg-hglt: #262c37;         /* The background of a highlight box*/
+    --bd-hglt: #a0b9e5;         /* The border of the highlight box*/
+}
+
+/* --- LIGHT MODE OVERRIDE --- */
+[data-theme="light"] {
+    --bg-light: #ffffff;
+    --primary-color: #093C71;
+    --accent-color: #FF9A16;
+    --text-color: #333333;
+    --bg-card: #f4f6f7;
+    --radius: 8px;
+    --shadow: 0 4px 6px rgba(0,0,0,0.1);
+    --bg-hglt: #eceff4;
+    --bd-hglt: #a0b9e5;
 }
 
 /* --- 2. RESET & BASE --- */
@@ -19,7 +45,7 @@ body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     line-height: 1.6;
     color: var(--text-color);
-    background-color: var(--white);
+    background-color: var(--bg-light);
 }
 
 img {
@@ -67,7 +93,7 @@ h1, h2, h3 {
 /* Navbar */
 .navbar {
     background-color: var(--primary-color);
-    color: var(--white);
+    color: var(--text-color);
     position: sticky;
     top: 0;
     z-index: 1000;
@@ -95,7 +121,7 @@ h1, h2, h3 {
 }
 
 .nav-links a {
-    color: var(--white);
+    color: white;
     text-decoration: none;
     margin-left: 20px;
     font-size: 0.9rem;
@@ -121,7 +147,7 @@ h1, h2, h3 {
 
 .btn-primary {
     background-color: var(--accent-color);
-    color: var(--white);
+    color: white;
     border: none;
 }
 
@@ -132,7 +158,7 @@ h1, h2, h3 {
 
 /* Cards */
 .card {
-    background: var(--white);
+    background: var(--bg-card);
     padding: 30px;
     border-radius: var(--radius);
     box-shadow: var(--shadow);
@@ -150,13 +176,13 @@ h1, h2, h3 {
     url('images/banner.jpeg');
     background-size: cover;
     background-position: center;
-    color: var(--white);
+    color: white;
     text-align: center;
     padding: 100px 20px;
 }
 
 .hero h1 {
-    color: var(--white);
+    color: white;
     font-size: 2.5rem;
     margin-bottom: 20px;
 }
@@ -167,9 +193,9 @@ h1, h2, h3 {
 }
 
 .highlight-box {
-    background: #e8f6f3;
+    background: var(--bg-hglt);
     padding: 20px;
-    border-left: 5px solid #1abc9c;
+    border-left: 5px solid var(--bd-hglt);
     border-radius: 4px;
 }
 
@@ -178,10 +204,28 @@ h1, h2, h3 {
     box-shadow: var(--shadow);
 }
 
+/* Theme button*/
+.theme-toggle {
+    background: transparent;
+    border: 1px solid white;
+    color: white;
+    padding: 5px 10px;
+    border-radius: 20px;
+    cursor: pointer;
+    font-size: 0.8rem;
+    margin-left: 10px;
+}
+
+.theme-toggle:hover {
+    background: var(--accent-color);
+    border-color: var(--accent-color);
+    color: var(--text-color);
+}
+
 /* Footer */
 footer {
     background: var(--primary-color);
-    color: var(--white);
+    color: white;
     text-align: center;
     padding: 20px 0;
     margin-top: 50px;
@@ -195,7 +239,7 @@ footer {
     left: 0;
     width: 100%;
     height: 100%;
-    background: var(--white);
+    background: var(--bg-light);
     z-index: 9999;
     display: flex;
     justify-content: center;
@@ -211,9 +255,8 @@ footer {
 
 /* --- PASTED FROM UIVERSE (With minor tweaks) --- */
 .three-body {
- --uib-size: 50px; /* Made slightly bigger for visibility */
+ --uib-size: 50px;
  --uib-speed: 0.8s;
- --uib-color: var(--accent-color); /* CHANGED: Matches your theme now */
  position: relative;
  display: inline-block;
  height: var(--uib-size);
@@ -233,7 +276,7 @@ footer {
  height: 0%;
  width: 100%;
  padding-bottom: 100%;
- background-color: var(--uib-color);
+ background-color: var(--accent-color);
  border-radius: 50%;
 }
 
