@@ -1,13 +1,39 @@
-window.addEventListener("load", function () {
+//window.addEventListener("load", function () {
     // --- 1. LOADER LOGIC ---
-    const loader = document.getElementById("loader-wrapper");
-    if(loader) {
-        loader.classList.add("loader-hidden");
+//    const loader = document.getElementById("loader-wrapper");
+//    if(loader) {
+//        loader.classList.add("loader-hidden");
         // Remove from DOM to stop it blocking clicks
-        loader.addEventListener("transitionend", () => {
-            if (loader.parentNode) loader.parentNode.removeChild(loader);
-        });
-    }
+//        loader.addEventListener("transitionend", () => {
+//            if (loader.parentNode) loader.parentNode.removeChild(loader);
+//        });
+//    }
+
+// Define the removal logic separately so we can call it from multiple places
+function removeLoader() {
+    const loader = document.getElementById("loader-wrapper");
+    
+    // If loader is already gone, stop.
+    if (!loader || loader.classList.contains("loader-hidden")) return;
+
+    loader.classList.add("loader-hidden");
+    
+    // Wait for the CSS transition (0.5s) to finish, then delete from HTML
+    loader.addEventListener("transitionend", () => {
+        if (loader.parentNode) loader.parentNode.removeChild(loader);
+    });
+}
+
+// Trigger 1: When the browser says "I'm ready"
+window.addEventListener("load", removeLoader);
+
+// Trigger 2: The Safety Switch (3 seconds max wait)
+// This prevents the "Forever Load" if an image/map gets stuck
+setTimeout(removeLoader, 500);
+
+// --- THEME LOGIC ---
+// This runs immediately to handle the toggle button
+document.addEventListener("DOMContentLoaded", function() {
 
     // --- 2. THEME LOGIC (The Hierarchy) ---
     const toggleBtn = document.getElementById("theme-toggle");
