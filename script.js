@@ -24,12 +24,9 @@ function removeLoader() {
     });
 }
 
-// Trigger 1: When the browser says "I'm ready"
-window.addEventListener("load", removeLoader);
-
-// Trigger 2: The Safety Switch (3 seconds max wait)
-// This prevents the "Forever Load" if an image/map gets stuck
-setTimeout(removeLoader, 500);
+window.addEventListener("DOMContentLoaded", () => {
+    setTimeout(removeLoader, 300);
+});
 
 // --- THEME LOGIC ---
 // This runs immediately to handle the toggle button
