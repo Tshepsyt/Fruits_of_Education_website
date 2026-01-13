@@ -1,7 +1,7 @@
 /* --- 1. VARIABLES (The Theme) --- */
 :root {
-    --primary-color: #2c3e50;    /* Dark Blue/Grey */
-    --accent-color: #e67e22;     /* Orange (Good for buttons) */
+    --primary-color: #093C71;    /* Blue*/
+    --accent-color: #FF9A16;     /* Orange (Good for buttons) */
     --bg-light: #f4f6f7;         /* Light Grey background */
     --text-color: #333333;
     --white: #ffffff;
@@ -146,7 +146,8 @@ h1, h2, h3 {
 
 /* Hero Section */
 .hero {
-    background: linear-gradient(rgba(44, 62, 80, 0.8), rgba(44, 62, 80, 0.8)), url('https://placehold.co/1200x600/2c3e50/white?text=Community+Background');
+    background: linear-gradient(rgba(44, 62, 80, 0.5), rgba(44, 62, 80, 0.5)),
+    url('images/banner.jpeg');
     background-size: cover;
     background-position: center;
     color: var(--white);
