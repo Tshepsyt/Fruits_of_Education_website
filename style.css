@@ -34,6 +34,7 @@
     --bg-hglt: #262c37;         /* The background of a highlight box*/
     --bd-hglt: #a0b9e5;         /* The border of the highlight box*/
     --tree-bg: url('images/tree.svg');      /* Adds the tree background*/
+    --team-img: url('images/FOE_Team_d.webp'); /* Adds the correct color photo*/
 }
 
 /* --- LIGHT MODE OVERRIDE --- */
@@ -47,6 +48,7 @@
     --shadow: 0 4px 6px rgba(0,0,0,0.1);
     --bg-hglt: #eceff4;
     --bd-hglt: #a0b9e5;
+    --team-img: url('images/FOE_Team_l.webp');
     --tree-bg: url('images/tree.svg');
 }
 
@@ -64,7 +66,6 @@ body::before {
     width: 100vw; 
     height: 100vh;
     
-    /* The Variable you set up earlier */
     background-image: var(--tree-bg);
     
     /* Positioning */
@@ -131,6 +132,7 @@ h1, h2, h3 {
 /* --- 4. RESPONSIVE GRID --- */
 .row {
     display: flex;
+    align-items: center;
     flex-wrap: wrap;
     gap: 40px;
 }
@@ -138,6 +140,13 @@ h1, h2, h3 {
 .column {
     flex: 1;
     min-width: 300px;
+}
+
+.calendar {
+    flex: 1 1 0px;
+    min-width: 330px;
+    max-width: 800px;
+    height: 330px;
 }
 
 /* --- 5. COMPONENTS --- */
@@ -239,6 +248,30 @@ h1, h2, h3 {
     font-weight: normal;
     font-size: 4rem;
     margin-bottom: 20px;
+}
+
+/* Team Photo Section*/
+.team-photo {
+
+    background-image: var(--team-img);
+    
+    /* Forces the whole image to fit inside the box without cropping */
+    background-size: contain; 
+    background-repeat: no-repeat;
+    background-position: top center;
+    
+    width: 100%;
+    
+    /* The actual width and height of the image file.
+       This tells the div to scale its height dynamically as column flexes. */
+    aspect-ratio: 1003 / 805;
+    transition: transform 0.3s ease-in-out;
+    
+    display: block;
+}
+
+.team-photo:hover {
+    transform: scale(1.025);
 }
 
 /* Info Boxes */
